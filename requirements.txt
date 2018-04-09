@@ -5,4 +5,4 @@ setuptools>=3.3
 gevent>=1.0
 gevent-websocket
 gevent-socketio
-
+socketio
