@@ -1,10 +1,6 @@
-gunicorn==17.5
-Flask>=0.10.1
-Flask-SocketIO==0.6.0
-gevent
+gunicorn
+Flask
+Flask-SocketIO
 eventlet
 greenlet
-setuptools
-socketio
-gevent-socketio
-gevent-websocket
+gevent
