@@ -55,5 +55,5 @@ def change_channel(data):
 
 	
 if __name__ == "__main__":
-    socketio.run(app,host='192.168.38.168',port=5000)
+    socketio.run(app)
 
