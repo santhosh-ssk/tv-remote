@@ -55,5 +55,5 @@ def change_channel(data):
 
 	
 if __name__ == "__main__":
-    socketio.run(app,host='https://tv-shows-01.herokuapp.com/',post=5000)
+    socketio.run(app)
 
