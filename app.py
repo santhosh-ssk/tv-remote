@@ -15,15 +15,15 @@ import json
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-urls=["https://www.youtube.com/embed/LXFxoS9ZJGg?autoplay=1",
+urls=["https://www.youtube.com/embed/LXFxoS9ZJGg?autoplay=1"
 ]
 @app.route("/")
 def index():
     return render_template('index.html',)
 
-@app.route("/page/<channel_no>")
+@app.route("/page/<int: channel_no>")
 def page(channel_no):
-    return render_template('page.html',url=urls[int(channel_no)])
+    return render_template('page.html',url=urls[channel_no-1])
 
 
 @socketio.on("add_device")
