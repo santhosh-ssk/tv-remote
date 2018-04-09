@@ -1,7 +1,8 @@
-gunicorn==0.16.1 
-Flask 
-Flask-SocketIO
-gevent
+gunicorn==17.5
+Flask>=0.10.1
+Flask-SocketIO==0.6.0
+setuptools>=3.3
+gevent>=1.0
 gevent-websocket
 gevent-socketio 
 SocketIOServer
