@@ -6,3 +6,5 @@ gevent>=1.0
 gevent-websocket
 gevent-socketio
 socketio
+eventlet
+greenlet
