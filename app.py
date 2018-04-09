@@ -40,4 +40,4 @@ def device_registration(data):
 	print(data)
 
 if __name__ == '__main__':
-    socketio.run(app, host='127.0.0.1',port=5001)
+    socketio.run(app)

@@ -3,5 +3,4 @@ gunicorn
 requests
 mongoengine
 uuid
-base64
 flask-socketio
