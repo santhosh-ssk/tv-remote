@@ -1,5 +1,5 @@
 from flask import Flask, render_template,url_for
-from flask.ext.socketio import SocketIO,join_room, leave_room
+from flask.ext.socketio import SocketIO,join_room, leave_room,request
 from mongoengine import connect
 import json
 connect(
