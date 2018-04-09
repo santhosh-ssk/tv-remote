@@ -1,13 +1,1 @@
-Flask
-gunicorn
-requests
-mongoengine
-uuid
-flask-socketio
-gunicorn==0.16.1 
-Flask 
-Flask-SocketIO
-gevent>=1.0
-gunicorn==17.5
-setuptools>=3.3
-Flask-SocketIO==0.6.0
+gunicorn==0.16.1 Flask Flask-SocketIO
