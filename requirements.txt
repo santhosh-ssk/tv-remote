@@ -4,5 +4,4 @@ Flask-SocketIO==0.6.0
 setuptools>=3.3
 gevent>=1.0
 gevent-websocket
-gevent-socketio 
-SocketIOServer
+gevent-socketio
