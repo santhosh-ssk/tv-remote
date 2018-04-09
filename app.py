@@ -51,7 +51,7 @@ def add_user(data):
 @socketio.on("chno")
 def change_channel(data):
 	print(data)
-	socketio.emit('redirect', {'url': url_for('page/'+str(data))},broadcast=True)
+	socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page/'+str(data)},broadcast=True)
 
 	
 if __name__ == "__main__":
