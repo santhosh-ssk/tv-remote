@@ -6,3 +6,5 @@ eventlet
 greenlet
 setuptools
 socketio
+gevent-socketio
+gevent-websocket
