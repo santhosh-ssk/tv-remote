@@ -4,3 +4,6 @@ requests
 mongoengine
 uuid
 flask-socketio
+gunicorn==0.16.1 
+Flask 
+Flask-SocketIO
