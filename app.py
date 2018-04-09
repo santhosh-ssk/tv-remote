@@ -23,8 +23,9 @@ def index():
 
 @app.route("/page",methods=['POST'])
 def page():
-    print(request.form.to_dict()['channel_no'])
-    return render_template('page.html',url=urls[0])
+    #print()
+    channel_no=int(request.form.to_dict()['channel_no'])-1
+    return render_template('page.html',url=urls[channel_no])
 
 
 @socketio.on("add_device")
