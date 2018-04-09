@@ -31,7 +31,7 @@
             }
             function signup(){
                 //alert($("#name").val()+"a"+$("#D_id").val())
-                socket.emit('add_user', {"username" : $("#name").val(),"device_id":$("#D_id").val()});
+                socket.emit('add_user', {"device_id":$("#D_id").val()});
             }
 
             socket.on('redirect',function(data) {
@@ -66,25 +66,12 @@
             <div class="col-xs-5"></div>
             <div class="col-xs-3" style='color:white;padding-top:3%;padding-bottom:3%;background-image:url("./static/black.jpg");background-size:100% 100%;height:100%;display:none' id="sup_form">
                         <div class="form-group">
-                          <label for="Name">Name:</label>
-                          <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
                           <label for="Device">Device id:</label>
                           <input type="text" class="form-control" id="D_id">
                         </div>
                         <button type="submit" class="btn btn-default" Onclick="signup()">Submit</button>
                       
             </div>
-            <div class="col-xs-3" style='color:white;padding-top:3%;padding-bottom:3%;background-image:url("./static/black.jpg");background-size:100% 100%;height:100%;display:none' id="sin_form">
-                
-                    <div class="form-group">
-                      <label for="Device">Device id:</label>
-                      <input type="text" class="form-control" id="login_D_id">
-                    </div>
-                    <button type="submit" class="btn btn-default" id="login_form">Use TV Remote</button>
-                
-        </div>
         </div>
     </div>
 
