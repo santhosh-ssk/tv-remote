@@ -21,7 +21,7 @@ urls=["https://www.youtube.com/embed/LXFxoS9ZJGg?autoplay=1"
 def index():
     return render_template('index.html',)
 
-@app.route("/page/<int: channel_no>")
+@app.route("/page/<int:channel_no>")
 def page(channel_no):
     return render_template('page.html',url=urls[channel_no-1])
 
