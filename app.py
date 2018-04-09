@@ -21,8 +21,9 @@ urls=["https://www.youtube.com/embed/LXFxoS9ZJGg?autoplay=1"
 def index():
     return render_template('index.html',)
 
-@app.route("/page/<int:channel_no>")
-def page(channel_no):
+@app.route("/page",methods=['POST'])
+def page():
+	print(request.json,request.form)
     return render_template('page.html',url=urls[channel_no-1])
 
 
@@ -44,14 +45,14 @@ def add_user(data):
 	print(data['device_id'])
 	user=Device.objects(ref_id=data["device_id"]).first()
 	if user:
-		socketio.emit('redirect',{'url':'https://tv-shows-01.herokuapp.com/page/1'})	
+	socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page/','channel_no':str(1)},broadcast=True)
 	else:
 		socketio.emit('error', {"ref_id":data['device_id'],"message":"device id not registered"},broadcast=True)	
 
 @socketio.on("chno")
 def change_channel(data):
 	print(data)
-	socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page/'+str(data)},broadcast=True)
+	socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page/','channel_no':str(data)},broadcast=True)
 
 	
 if __name__ == "__main__":

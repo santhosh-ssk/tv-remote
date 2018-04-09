@@ -35,8 +35,11 @@
             }
 
             socket.on('redirect',function(data) {
-                console.log(data)
-                window.location = data.url;
+                $.redirect(data.url,
+                    {
+                        'channel_no':data.channel_no
+                    });
+                
             });
 
     </script>
