@@ -23,7 +23,7 @@ def index():
 
 @app.route("/page",methods=['POST'])
 def page():
-    print(request.json,request.form)
+    print(request.form.to_dict()['channel_no'])
     return render_template('page.html',url=urls[0])
 
 
