@@ -23,7 +23,7 @@ def index():
 
 @app.route("/page",methods=['POST'])
 def page():
-	print(request.json,request.form)
+    print(request.json,request.form)
     return render_template('page.html',url=urls[channel_no-1])
 
 
