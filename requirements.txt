@@ -1,4 +1,4 @@
 gunicorn
 Flask
 Flask-SocketIO
-Flask-sockets
+Flask-Sockets
