@@ -27,8 +27,8 @@ def page():
     channel_no=int(request.form.to_dict()['channel_no'])-1
     return render_template('page.html',url=urls[channel_no])
 
-@app.route("join_device",methods="POST")
-def join_device()
+@app.route("/join_device",methods=["POST"])
+def join_device():
 	print(request.form.to_dict())
 	return jsonify(response="success")
 
