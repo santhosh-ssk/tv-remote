@@ -31,6 +31,7 @@ def page():
 def join_device():
 	data=request.form.to_dict()['device_id']
 	device=Device.objects(device_id=data).first()
+	print(data,device)
 	if device:
 		return render_template('page.html',url=urls[0],device_id=data)
 	else:	
