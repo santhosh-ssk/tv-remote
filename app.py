@@ -30,10 +30,10 @@ def page():
 @app.route("/join_device",methods=["POST"])
 def join_device():
 	data=request.form.to_dict()['device_id']
-	device=Device.objects(device_id=data).first()
+	device=Device.objects(ref_id=data).first()
 	print(data,device)
 	if device:
-		return render_template('page.html',url=urls[0],device_id=data)
+		return render_template('page.html',url=urls[0],device_ref_id=data)
 	else:	
 		return render_template('index.html',flash_message="device is not registered")
 
