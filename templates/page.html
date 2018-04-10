@@ -16,17 +16,18 @@
         .vl{border-left:100px;height:100%;}
         .white-dot{color:white;}
     </style>
-    <script>
-           function signupForm()
-            {
-                $("#sup_form").slideToggle("slow");
-            }
 
-            function signinForm()
-            {
-                $("#sin_form").slideToggle("slow");
-            }
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+       
+    <script>
+        var socket = io.connect('http://192.168.38.168:5000');
+            socket.on('redirect',function(data) {
+                console.log(data)
+                window.location = data.url;
+            });
     </script>
+
 </head>
 
 <body>
