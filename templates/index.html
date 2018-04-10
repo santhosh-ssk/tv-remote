@@ -18,20 +18,6 @@
 		.bold{font-style:normal;font-weight:600;}
 		.call_center{text-align:center;}
     </style>
-    <script type="text/javascript" src="static/js/jquery.redirect.js"></script>
-    <script>
-           
-           var socket = io.connect('https://tv-shows-01.herokuapp.com' + ':' + location.port + '/');
-           
-            socket.on('redirect',function(data) {
-                $.redirect(data.url,
-                    {
-                        'channel_no':data.channel_no
-                    });
-                
-            });
-
-    </script>
 </head>
 
 <body style="background-image:url('./static/images/background.jpg');background-repeat: no-repeat;">
