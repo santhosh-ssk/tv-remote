@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request
+from flask import Flask, render_template,url_for,request,jsonify
 from flask.ext.socketio import SocketIO,join_room, leave_room
 from mongoengine import connect
 import json
@@ -27,6 +27,10 @@ def page():
     channel_no=int(request.form.to_dict()['channel_no'])-1
     return render_template('page.html',url=urls[channel_no])
 
+@app.route("join_device",methods="POST")
+def join_device()
+	print(request.form.to_dict())
+	return jsonify(response="success")
 
 @socketio.on("add_device")
 def add_device(data):
