@@ -19,7 +19,7 @@ urls=["https://www.youtube.com/embed/LXFxoS9ZJGg?autoplay=1"
 ]
 @app.route("/")
 def index():
-    return render_template('index.html',)
+    return render_template('index.html',flash_message=None)
 
 @app.route("/page",methods=['POST'])
 def page():
@@ -29,15 +29,19 @@ def page():
 
 @app.route("/join_device",methods=["POST"])
 def join_device():
-	print(request.form.to_dict())
-	return jsonify(response="success")
+	data=request.form.to_dict()['device_id']
+	device=Device.objects(device_id=data).first()
+	if device:
+		return render_template('page.html',url=urls[0],device_id=data)
+	else:	
+		return render_template('index.html',flash_message="device is not registered")
 
 @socketio.on("add_device")
 def add_device(data):
 	device=Device.objects(device_id=data).first()
 
 	if device:	
-		socketio.emit('device_id',{'id':device.ref_id},broadcast=True)
+		socketio.emit('device_id',{'id':device.ref_id,'device_id':data},broadcast=True)
 		
 	else:
 		device=Device(device_id=data)
