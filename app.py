@@ -25,7 +25,7 @@ def index():
 def page():
     #print()
     channel_no=int(request.form.to_dict()['channel_no'])-1
-    return render_template('page.html',url=urls[channel_no])
+    return render_template('page.html',url=urls[0])
 
 @app.route("/join_device",methods=["POST"])
 def join_device():
