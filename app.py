@@ -73,7 +73,7 @@ def add_user(data):
 	print(data['device_id'])
 	user=Device.objects(ref_id=data["device_id"]).first()
 	if user:
-		socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page','channel_no':str(1)},broadcast=True)
+		socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page','channel_no':str(1),'device_id':data["device_id"]},broadcast=True)
 	else:
 		socketio.emit('error', {"ref_id":data['device_id'],"message":"device id not registered"},broadcast=True)	
 
@@ -81,7 +81,7 @@ def add_user(data):
 def change_channel(data):
 	data=data.split('&')
 	print(data)
-	socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page','channel_no':str(data[0]),'device_id':int(data[1])},broadcast=True)
+	socketio.emit('redirect', {'channel_no':str(data[0]),'device_id':int(data[1])},broadcast=True)
 
 	
 if __name__ == "__main__":
