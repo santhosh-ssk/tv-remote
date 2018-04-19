@@ -42,9 +42,8 @@ def index():
 
 @app.route("/page",methods=['POST'])
 def page():
-    #print()
     channel_no=int(request.form.to_dict()['channel_no'])-1
-    return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no)
+    return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no,device_ref_id=int(request.form.to_dict()['device_ref_id'])
 
 @app.route("/join_device",methods=["POST"])
 def join_device():
@@ -68,14 +67,6 @@ def add_device(data):
 		device=Device.objects(device_id=data).first()
 		socketio.emit('device_id',{'id' : device.ref_id },broadcast=True)
 
-@socketio.on("add_user")
-def add_user(data):
-	print(data['device_id'])
-	user=Device.objects(ref_id=data["device_id"]).first()
-	if user:
-		socketio.emit('redirect', {'url': 'https://tv-shows-01.herokuapp.com/page','channel_no':str(1),'device_id':data["device_id"]},broadcast=True)
-	else:
-		socketio.emit('error', {"ref_id":data['device_id'],"message":"device id not registered"},broadcast=True)	
 
 @socketio.on("chno")
 def change_channel(data):
