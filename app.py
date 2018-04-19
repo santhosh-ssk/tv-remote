@@ -47,7 +47,7 @@ def page():
     	return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']))
     else:
     	channel_no=int(request.form.to_dict()['current_channel'])-1
-    	return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']),flash_message="Channel Not Available")
+    	return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']),flash_message=request.form.to_dict()['channel_no']+" Channel Not Available")
 
 @app.route("/join_device",methods=["POST"])
 def join_device():
