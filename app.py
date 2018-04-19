@@ -43,7 +43,11 @@ def index():
 @app.route("/page",methods=['POST'])
 def page():
     channel_no=int(request.form.to_dict()['channel_no'])-1
-    return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']))
+    if(channel_no <len(channels)):
+    	return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']),)
+    else:
+    	channel_no=int(request.form.to_dict()['current_channel'])-1
+		return render_template('page.html',url=channels[channel_no][1],channels=channels,current_channel=channel_no+1,device_ref_id=int(request.form.to_dict()['device_ref_id']),)
 
 @app.route("/join_device",methods=["POST"])
 def join_device():

@@ -27,7 +27,7 @@
             socket.on('redirect',function(data) {
                 console.log(data)
                 if(device_id==data.device_id)
-                    $.redirect("./page",{ channel_no: data.channel_no,device_ref_id:device_id}); 
+                    $.redirect("./page",{ channel_no: data.channel_no,device_ref_id:device_id,current_channel:{{current_channel}}}); 
             });
 
     </script>
@@ -52,6 +52,13 @@
 
   </div>
 </nav>
+
+{% if flash_message%} 
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Warning!</strong> {{flash_message}}
+    </div>
+{%endif%}
 
 	<div class="container-fluid">
 		<div class="row" >
