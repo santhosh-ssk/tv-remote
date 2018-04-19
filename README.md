@@ -4,7 +4,7 @@
 
 ## Website link: https://tv-shows-01.herokuapp.com/
 
-### Requiremnts
+### Requirements
 
 	LED sensors are not required
 	Android 4.4 and higher version is required
