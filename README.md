@@ -3,6 +3,7 @@
 ## This is an application developed to replace tv remotes with our smart phones.
 
 ## Website link: https://tv-shows-01.herokuapp.com/
+## Android app:  https://drive.google.com/file/d/0B7jojn6xNn2DcFhHOFotUTlyUmtqb2wwMzFsRXNaQ1NGUTJn/view?usp=sharing
 
 ### Requirements
 
