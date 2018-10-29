@@ -15,7 +15,7 @@ import json
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-channels=[['Puthiya Thalaimurai', 'https://www.youtube.com/embed/VfoXmi02zY?autoplay=1', 'https://yt3.ggpht.com/-uUA9W2X7gTE/AAAAAAAAAAI/AAAAAAAAAAA/ZyBVWwzjNKU/s176-c-k-no-mo-rj-c0xffffff/photo.jpg',1], 
+channels=[['Puthiya Thalaimurai', 'https://www.youtube.com/embed/-VfoXmi02zY?autoplay=1', 'https://yt3.ggpht.com/-uUA9W2X7gTE/AAAAAAAAAAI/AAAAAAAAAAA/ZyBVWwzjNKU/s176-c-k-no-mo-rj-c0xffffff/photo.jpg',1], 
 ['Sun News', 'https://www.youtube.com/embed/IM4zGl8Nw8Q?autoplay=1', 'https://yt3.ggpht.com/-0ryR0iBcQR4/AAAAAAAAAAI/AAAAAAAAAAA/AJyOAXbAeYQ/s176-c-k-no-mo-rj-c0xffffff/photo.jpg',2],
  ['Polimer TV', 'https://www.youtube.com/embed/qcT0ipc8GVY?autoplay=1', 'https://yt3.ggpht.com/-HTBuNlCaWRc/AAAAAAAAAAI/AAAAAAAAAAA/5xOa_wW6LOA/s176-c-k-no-mo-rj-c0xffffff/photo.jpg',3], 
  ['News 7', 'https://www.youtube.com/embed/QJtX-g2n4d8?autoplay=1', 'https://yt3.ggpht.com/-2l7MfvM53NI/AAAAAAAAAAI/AAAAAAAAAAA/r3eUuFf6Dho/s176-c-k-no-mo-rj-c0xffffff/photo.jpg',4],
